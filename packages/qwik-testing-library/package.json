@@ -1,0 +1,11 @@
+{
+  "name": "qwik-testing-library",
+  "version": "0.0.0",
+  "description": "Simple and complete Qwik DOM testing utilities that encourage good testing practices.",
+  "type": "module",
+  "exports": "./src/index.js",
+  "dependencies": {
+  },
+  "peerDependencies": {
+  }
+}
