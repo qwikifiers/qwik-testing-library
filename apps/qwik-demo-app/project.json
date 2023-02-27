@@ -2,7 +2,7 @@
   "name": "qwik-demo-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "packages/qwik-demo-app/src",
+  "sourceRoot": "apps/qwik-demo-app/src",
   "targets": {
     "build": {
       "executor": "qwik-nx:build",
@@ -11,7 +11,7 @@
           "qwik-demo-app:build.client",
           "qwik-demo-app:build.ssr"
         ],
-        "outputPath": "dist/packages/qwik-demo-app"
+        "outputPath": "dist/apps/qwik-demo-app"
       },
       "configurations": {
         "preview": {}
@@ -20,15 +20,15 @@
     "build.client": {
       "executor": "@nrwl/vite:build",
       "options": {
-        "outputPath": "dist/packages/qwik-demo-app",
-        "configFile": "packages/qwik-demo-app/vite.config.ts"
+        "outputPath": "dist/apps/qwik-demo-app",
+        "configFile": "apps/qwik-demo-app/vite.config.ts"
       }
     },
     "build.ssr": {
       "executor": "@nrwl/vite:build",
       "defaultConfiguration": "preview",
       "options": {
-        "outputPath": "dist/packages/qwik-demo-app"
+        "outputPath": "dist/apps/qwik-demo-app"
       },
       "configurations": {
         "preview": {
@@ -45,10 +45,10 @@
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["../../coverage/packages/qwik-demo-app"],
+      "outputs": ["../../coverage/apps/qwik-demo-app"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/packages/qwik-demo-app"
+        "reportsDirectory": "../../coverage/apps/qwik-demo-app"
       }
     },
     "serve": {
@@ -62,14 +62,14 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "node --inspect-brk ../../node_modules/vite/bin/vite.js --mode ssr --force",
-        "cwd": "packages/qwik-demo-app"
+        "cwd": "apps/qwik-demo-app"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/qwik-demo-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/qwik-demo-app/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
