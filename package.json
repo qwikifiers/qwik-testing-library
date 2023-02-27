@@ -2,7 +2,11 @@
   "name": "qwikifiers-project",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "commit": "git-cz",
+    "format:fix": "pretty-quick --staged",
+    "prepare": "husky install"
+  },
   "private": true,
   "devDependencies": {
     "@builder.io/qwik": "~0.17.5",
