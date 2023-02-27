@@ -1,10 +1,6 @@
 import { render as qwikRender } from '@builder.io/qwik';
 import { getQueriesForElement } from '@testing-library/dom';
-import {
-  Options,
-  Result,
-  Ui,
-} from 'packages/qwik-testing-library/src/lib/types';
+import { Options, Result, Ui } from './types';
 
 /* istanbul ignore next */
 if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
@@ -18,13 +14,8 @@ if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
 const mountedContainers = new Set<HTMLElement>();
 
 async function render(ui: Ui, options: Options = {}): Result {
-  let {
-    container,
-    baseElement = container,
-    queries,
-    wrapper,
-    ...qwikRenderOptions
-  } = options;
+  let { container, baseElement = container } = options;
+  const { queries, serverData } = options;
 
   if (!baseElement) {
     // Default to document.body instead of documentElement to avoid output of potentially-large
@@ -36,9 +27,9 @@ async function render(ui: Ui, options: Options = {}): Result {
     container = baseElement.appendChild(document.createElement('div'));
   }
 
-  await qwikRender(container, ui, qwikRenderOptions);
+  await qwikRender(container, ui, { serverData });
 
-  mountedContainers.add(container!);
+  mountedContainers.add(container);
 
   const queryHelpers = getQueriesForElement(container, queries);
 
