@@ -5,10 +5,6 @@ import {
   Ui,
 } from 'packages/qwik-testing-library/src/lib/types';
 
-export function doSomething(): string {
-  return 'something';
-}
-
 /* istanbul ignore next */
 if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
   if (typeof afterEach === 'function') {
