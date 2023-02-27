@@ -1,4 +1,5 @@
 import { render as qwikRender } from '@builder.io/qwik';
+import { getQueriesForElement } from '@testing-library/dom';
 import {
   Options,
   Result,
@@ -39,7 +40,7 @@ async function render(ui: Ui, options: Options = {}): Result {
 
   mountedContainers.add(container!);
 
-  // const queryHelpers = getQueriesForElement(container, queries);
+  const queryHelpers = getQueriesForElement(container, queries);
 
   return {
     asFragment: () => container?.innerHTML as string,
@@ -50,7 +51,7 @@ async function render(ui: Ui, options: Options = {}): Result {
     //     ? el.forEach((e) => console.log(prettyDOM(e, maxLength, options)))
     //     : console.log(prettyDOM(el, maxLength, options)),
     // unmount: dispose,
-    // ...queryHelpers,
+    ...queryHelpers,
   } as Result;
 }
 
