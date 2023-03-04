@@ -1,5 +1,5 @@
 import { JSXNode, render as qwikRender } from '@builder.io/qwik';
-import { getQueriesForElement } from '@testing-library/dom';
+import { getQueriesForElement, prettyDOM } from '@testing-library/dom';
 import { Options, Result } from './types';
 
 /* istanbul ignore next */
@@ -37,10 +37,10 @@ async function render(ui: JSXNode, options: Options = {}): Result {
     asFragment: () => container?.innerHTML as string,
     container,
     baseElement,
-    // debug: (el = baseElement, maxLength, options) =>
-    //   Array.isArray(el)
-    //     ? el.forEach((e) => console.log(prettyDOM(e, maxLength, options)))
-    //     : console.log(prettyDOM(el, maxLength, options)),
+    debug: (el = baseElement, maxLength, options) =>
+      Array.isArray(el)
+        ? el.forEach((e) => console.log(prettyDOM(e, maxLength, options)))
+        : console.log(prettyDOM(el, maxLength, options)),
     // unmount: dispose,
     ...queryHelpers,
   } as Result;
