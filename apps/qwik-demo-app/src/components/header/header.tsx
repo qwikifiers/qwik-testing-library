@@ -3,7 +3,7 @@ import { QwikLogo } from '../icons/qwik';
 import styles from './header.css?inline';
 
 export default component$(() => {
-  useStylesScoped$(styles);
+  // useStylesScoped$(styles);
 
   return (
     <header>

@@ -5,7 +5,9 @@
   "type": "module",
   "exports": "./src/index.js",
   "dependencies": {
+    "@testing-library/dom": "^9.0.0"
   },
   "peerDependencies": {
+    "@builder.io/qwik": "~0.17.5"
   }
 }

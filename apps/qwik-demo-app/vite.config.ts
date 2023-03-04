@@ -10,10 +10,10 @@ export default defineConfig({
     qwikCity(),
     qwikVite({
       client: {
-        outDir: '../../dist/packages/qwik-demo-app/client',
+        outDir: '../../dist/apps/qwik-demo-app/client',
       },
       ssr: {
-        outDir: '../../dist/packages/qwik-demo-app/server',
+        outDir: '../../dist/apps/qwik-demo-app/server',
       },
     }),
     tsconfigPaths({ root: '../../' }),
@@ -34,7 +34,7 @@ export default defineConfig({
     cache: {
       dir: '../../node_modules/.vitest',
     },
-    environment: 'node',
+    environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
 });
