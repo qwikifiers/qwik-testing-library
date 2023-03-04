@@ -1,6 +1,6 @@
-import { render as qwikRender } from '@builder.io/qwik';
+import { JSXNode, render as qwikRender } from '@builder.io/qwik';
 import { getQueriesForElement } from '@testing-library/dom';
-import { Options, Result, Ui } from './types';
+import { Options, Result } from './types';
 
 /* istanbul ignore next */
 if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
@@ -13,7 +13,7 @@ if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
 
 const mountedContainers = new Set<HTMLElement>();
 
-async function render(ui: Ui, options: Options = {}): Result {
+async function render(ui: JSXNode, options: Options = {}): Result {
   let { container, baseElement = container } = options;
   const { queries, serverData } = options;
 

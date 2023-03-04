@@ -7,8 +7,6 @@ import type {
 } from '@testing-library/dom';
 import { Component, RenderOptions } from '@builder.io/qwik';
 
-export type Ui = () => JSX.Element;
-
 export interface Options extends RenderOptions {
   container?: HTMLElement;
   baseElement?: HTMLElement;
