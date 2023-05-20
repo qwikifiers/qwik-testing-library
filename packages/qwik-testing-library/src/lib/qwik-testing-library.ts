@@ -1,6 +1,6 @@
 import { JSXNode, render as qwikRender } from '@builder.io/qwik';
 import { getQueriesForElement, prettyDOM } from '@testing-library/dom';
-import { Options, Result } from './types';
+import { ComponentRef, Options, Result } from './types';
 
 /* istanbul ignore next */
 if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
@@ -11,7 +11,7 @@ if (!process.env.QTL_SKIP_AUTO_CLEANUP) {
   }
 }
 
-const mountedContainers = new Set<HTMLElement>();
+const mountedContainers = new Set<ComponentRef>();
 
 async function render(ui: JSXNode, options: Options = {}): Result {
   let { container, baseElement = container } = options;
@@ -27,9 +27,9 @@ async function render(ui: JSXNode, options: Options = {}): Result {
     container = baseElement.appendChild(document.createElement('div'));
   }
 
-  await qwikRender(container, ui, { serverData });
+  const { cleanup } = await qwikRender(container, ui, { serverData });
 
-  mountedContainers.add(container);
+  mountedContainers.add({ container, componentCleanup: cleanup });
 
   const queryHelpers = getQueriesForElement(container, queries);
 
@@ -46,12 +46,16 @@ async function render(ui: JSXNode, options: Options = {}): Result {
   } as Result;
 }
 
-function cleanupAtContainer(container: HTMLElement) {
+function cleanupAtContainer(ref: ComponentRef) {
+  const { container, componentCleanup } = ref;
+
+  componentCleanup();
+
   if (container?.parentNode === document.body) {
     document.body.removeChild(container);
   }
 
-  mountedContainers.delete(container);
+  mountedContainers.delete(ref);
 }
 
 function cleanup() {

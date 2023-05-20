@@ -27,3 +27,8 @@ export type Result = BoundFunctions<typeof queries> & {
   debug: DebugFn;
   unmount: () => void;
 };
+
+export type ComponentRef = {
+  container: HTMLElement;
+  componentCleanup: () => void;
+};

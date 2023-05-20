@@ -8,6 +8,6 @@
     "@testing-library/dom": "^9.0.0"
   },
   "peerDependencies": {
-    "@builder.io/qwik": "~0.17.5"
+    "@builder.io/qwik": "~1.1.4"
   }
 }
