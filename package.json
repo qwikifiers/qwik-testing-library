@@ -1,5 +1,5 @@
 {
-  "name": "qwikifiers-project",
+  "name": "qwik-testing-library-root",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -9,11 +9,11 @@
   },
   "private": true,
   "devDependencies": {
-    "@builder.io/qwik": "~0.17.5",
-    "@builder.io/qwik-city": "~0.1.0",
-    "@commitlint/cli": "^17.4.3",
+    "@builder.io/qwik": "~1.1.4",
+    "@builder.io/qwik-city": "~0.4.0",
+    "@commitlint/cli": "^17.4.4",
     "@commitlint/config-angular": "^17.4.3",
-    "@commitlint/config-conventional": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.4",
     "@jscutlery/semver": "^2.30.1",
     "@nrwl/cypress": "15.7.2",
     "@nrwl/eslint-plugin-nx": "15.7.2",
@@ -22,29 +22,29 @@
     "@nrwl/vite": "15.7.2",
     "@nrwl/workspace": "^15.7.2",
     "@types/node": "16.11.7",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "@vitest/ui": "^0.25.8",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vitest/ui": "^0.29.1",
     "all-contributors-cli": "^6.24.0",
-    "cypress": "^12.2.0",
+    "cypress": "^12.7.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "~8.15.0",
-    "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-cypress": "^2.10.3",
-    "eslint-plugin-qwik": "~0.17.5",
+    "eslint": "~8.35.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-qwik": "~0.19.2",
     "husky": "^8.0.3",
-    "jsdom": "~20.0.3",
-    "ngx-deploy-npm": "^5.0.0",
+    "jsdom": "~21.1.0",
+    "ngx-deploy-npm": "^5.2.0",
     "node-fetch": "~3.3.0",
     "nx": "15.7.2",
-    "prettier": "^2.6.2",
-    "qwik-nx": "^0.11.0",
-    "undici": "^5.18.0",
-    "vite": "~4.1.1",
+    "prettier": "^2.8.4",
+    "qwik-nx": "^0.11.1",
+    "undici": "^5.20.0",
+    "vite": "~4.1.4",
     "vite-plugin-dts": "~1.7.3",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-tsconfig-paths": "~4.0.3",
-    "vitest": "^0.25.8"
+    "vite-tsconfig-paths": "~4.0.5",
+    "vitest": "^0.29.1"
   },
   "config": {
     "commitizen": {
@@ -53,6 +53,5 @@
   },
   "keywords": [
     "qwik"
-  ],
-  "dependencies": {}
+  ]
 }
